@@ -3,7 +3,7 @@ def download_compound_properties(CIDs : list, properties : list) -> list:
     Downloads compound properties from PubChem.
 
     Parameters:
-        - CIDs (list)       : List of compound identifiers.
+        - CIDs       (list) : List of compound identifiers.
         - properties (list) : List of properties to be fetched.
 
     Returns:
