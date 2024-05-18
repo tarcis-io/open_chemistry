@@ -52,7 +52,10 @@ def plot_compound_images(title : str, directory : str, compounds : list):
     import matplotlib.pyplot
     import os
 
-    fig, axs = matplotlib.pyplot.subplots(math.ceil(len(compounds) / 5), 5, figsize = (16, 16), constrained_layout = True)
+    fig_cols = 5
+    fig_rows = math.ceil(len(compounds) / fig_cols)
+
+    fig, axs = matplotlib.pyplot.subplots(fig_rows, fig_cols, figsize = (16, 16), constrained_layout = True)
     fig.suptitle(title, fontsize = 16)
 
     axs = axs.flatten()
