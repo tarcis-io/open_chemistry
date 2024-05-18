@@ -1,13 +1,13 @@
 def download_compound_properties(CIDs : list, properties : list) -> list:
     """
-    Downloads compound properties from PubChem.
+    Downloads properties of chemical compounds from PubChem.
 
     Parameters:
-        - CIDs       (list) : List of compound identifiers.
-        - properties (list) : List of properties to be fetched.
+        - CIDs       (list) : List of the compound identifiers.
+        - properties (list) : List of the properties to be fetched.
 
     Returns:
-        - list : List of compounds containing the requested properties.
+        - list : List of the compounds containing the requested properties.
 
     Dependencies:
         - requests
@@ -29,11 +29,11 @@ def download_compound_properties(CIDs : list, properties : list) -> list:
 
 def download_compound_images(CIDs : list, image_size : int, directory : str):
     """
-    Downloads compound images from PubChem.
+    Downloads images of chemical compounds from PubChem.
 
     Parameters:
-        - CIDs       (list) : List of compound identifiers.
-        - image_size (int)  : Size of images.
+        - CIDs       (list) : List of the compound identifiers.
+        - image_size (int)  : Size of the images.
         - directory  (str)  : Directory where the images will be saved.
 
     Returns
