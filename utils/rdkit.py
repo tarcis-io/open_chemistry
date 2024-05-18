@@ -3,8 +3,8 @@ def create_compound_images(compounds : list, image_size : int, directory : str):
     Creates images of chemical compounds using the RDKit library.
 
     Parameters:
-        - compounds  (list) : List of compound dictionaries with keys 'CID' and 'CanonicalSMILES'.
-        - image_size (int)  : Size of images.
+        - compounds  (list) : List of the compound dictionaries with keys 'CID' and 'CanonicalSMILES'.
+        - image_size (int)  : Size of the images.
         - directory  (str)  : Directory where the images will be saved.
 
     Returns:
@@ -32,12 +32,12 @@ def create_compound_images(compounds : list, image_size : int, directory : str):
 
 def plot_compound_images(title : str, directory : str, compounds : list):
     """
-    Plots the images of chemical compounds created by the RDKit library.
+    Plots the images of the chemical compounds created by the RDKit library.
 
     Parameters:
-        - title     (str)  : The title of the image.
+        - title     (str)  : Title of the image.
         - directory (str)  : Directory where the images are saved.
-        - compounds (list) : List of compound dictionaries with keys 'CID' and 'Title'.
+        - compounds (list) : List of the compound dictionaries with keys 'CID' and 'Title'.
 
     Returns:
         - None
