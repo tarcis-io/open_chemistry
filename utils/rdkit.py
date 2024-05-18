@@ -22,7 +22,8 @@ def create_compound_images(compounds : list, image_size : int, directory : str):
         CID             = compound['CID']
         CanonicalSMILES = compound['CanonicalSMILES']
 
-        image_file = os.path.join(directory, f'{ CID }_RDKit.png')
+        image_file = f'{ CID }_RDKit.png'
+        image_file = os.path.join(directory, image_file)
 
         molecule = Chem.MolFromSmiles(CanonicalSMILES)
         Chem.Draw.MolToFile(molecule, image_file, size = (image_size, image_size))
