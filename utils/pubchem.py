@@ -40,6 +40,7 @@ def download_compound_images(CIDs : list, image_size : int, directory : str):
         - None
 
     Dependencies:
+        - os
         - requests
     """
 

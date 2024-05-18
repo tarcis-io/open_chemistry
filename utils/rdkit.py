@@ -11,6 +11,7 @@ def create_compound_images(compounds : list, image_size : int, directory : str):
         - None
 
     Dependencies:
+        - os
         - rdkit
     """
 
