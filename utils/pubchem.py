@@ -36,7 +36,7 @@ def download_compound_images(CIDs : list, image_size : int, directory : str):
         - image_size (int)  : Size of the images.
         - directory  (str)  : Directory where the images will be saved.
 
-    Returns
+    Returns:
         - None
 
     Dependencies:
@@ -60,6 +60,27 @@ def download_compound_images(CIDs : list, image_size : int, directory : str):
         with open(image_file, 'wb') as file:
 
             file.write(response)
+
+
+def print_compound_properties(compounds : list):
+    """
+    Prints the properties of the chemical compounds downloaded from PubChem.
+
+    Parameters:
+        - compounds (list) : List of the compound dictionaries.
+
+    Returns:
+        - None
+
+    Dependencies:
+        - json
+    """
+
+    import json
+
+    for compound in compounds:
+
+        print(json.dumps(compound, indent = 4))
 
 
 def plot_compound_images(title : str, directory : str, compounds : list):
