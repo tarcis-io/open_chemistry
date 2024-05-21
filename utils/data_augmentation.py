@@ -3,7 +3,7 @@ def create_images_with_transpositions(image_file : str):
     Creates images with transpositions from the provided image file.
 
     Parameters:
-        - image_file (str) : Image file in which the transpositions will be created.
+        - image_file (str) : Image file in which the transposed images will be created.
 
     Returns:
         - None
