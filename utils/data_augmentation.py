@@ -35,7 +35,7 @@ def create_images_with_transpositions(image_file : str):
 
 def plot_images_with_transpositions(title : str, image_file : str):
     """
-    Plots the given image file and its transposed images.
+    Plots the provided image file and its transposed images.
 
     Parameters:
         - title      (str) : Title of the image.
