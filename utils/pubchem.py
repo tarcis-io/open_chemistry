@@ -119,7 +119,7 @@ def plot_compound_images(title : str, directory : str, compounds : list):
         CID   = compound['CID']
         Title = compound['Title']
 
-        image_file = f'{ CID }.png'
+        image_file = f'{ CID }_PubChem.png'
         image_file = os.path.join(directory, image_file)
 
         ax = axs[index]
