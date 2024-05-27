@@ -1,11 +1,11 @@
-def create_compound_images(compounds : list, image_size : int, directory : str):
+def create_compound_images(compounds : list, directory : str, image_size : int):
     """
     Creates images of chemical compounds using the RDKit library.
 
     Parameters:
         - compounds  (list) : List of the compound dictionaries with the keys 'CID' and 'CanonicalSMILES'.
-        - image_size (int)  : Size of the images.
         - directory  (str)  : Directory where the images will be saved.
+        - image_size (int)  : Size of the images.
 
     Returns:
         - None
@@ -30,14 +30,14 @@ def create_compound_images(compounds : list, image_size : int, directory : str):
         Chem.Draw.MolToFile(molecule, image_file, size = (image_size, image_size))
 
 
-def plot_compound_images(title : str, directory : str, compounds : list):
+def plot_compound_images(compounds : list, directory : str, title : str):
     """
     Plots the images of the chemical compounds created by the RDKit library.
 
     Parameters:
-        - title     (str)  : Title of the image.
-        - directory (str)  : Directory where the images are saved.
         - compounds (list) : List of the compound dictionaries with the keys 'CID' and 'Title'.
+        - directory (str)  : Directory where the images are saved.
+        - title     (str)  : Title of the image.
 
     Returns:
         - None
