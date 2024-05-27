@@ -33,13 +33,13 @@ def create_images_with_transpositions(image_file : str):
         image_with_transposition.save('{}_with_transposition_{}.png'.format(image_file, transposition))
 
 
-def plot_images_with_transpositions(title : str, image_file : str):
+def plot_images_with_transpositions(image_file : str, title : str):
     """
     Plots the provided image file and its transposed images.
 
     Parameters:
-        - title      (str) : Title of the image.
         - image_file (str) : Image file that has transposed images.
+        - title      (str) : Title of the image.
 
     Returns:
         - None
