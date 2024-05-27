@@ -1,9 +1,9 @@
-def download_compound_properties(CIDs : list, properties : list) -> list:
+def download_compound_properties(compounds : list, properties : list) -> list:
     """
     Downloads properties of chemical compounds from PubChem.
 
     Parameters:
-        - CIDs       (list) : List of the compound identifiers.
+        - compounds  (list) : List of the compound dictionaries with the key 'CID'.
         - properties (list) : List of the properties to be fetched.
 
     Returns:
@@ -15,7 +15,7 @@ def download_compound_properties(CIDs : list, properties : list) -> list:
 
     import requests
 
-    CIDs       = ','.join(map(str, CIDs))
+    CIDs       = ','.join(map(str, [compound['CID'] for compound in compounds]))
     properties = ','.join(properties)
 
     url = f'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{ CIDs }/property/{ properties }/JSON'
@@ -27,14 +27,14 @@ def download_compound_properties(CIDs : list, properties : list) -> list:
     return response
 
 
-def download_compound_images(CIDs : list, image_size : int, directory : str):
+def download_compound_images(compounds : list, directory : str, image_size : int):
     """
     Downloads images of chemical compounds from PubChem.
 
     Parameters:
-        - CIDs       (list) : List of the compound identifiers.
-        - image_size (int)  : Size of the images.
+        - compounds  (list) : List of the compound dictionaries with the key 'CID'.
         - directory  (str)  : Directory where the images will be saved.
+        - image_size (int)  : Size of the images.
 
     Returns:
         - None
@@ -47,8 +47,9 @@ def download_compound_images(CIDs : list, image_size : int, directory : str):
     import os
     import requests
 
-    for CID in CIDs:
+    for compound in compounds:
 
+        CID = compound['CID']
         url = f'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{ CID }/PNG?image_size={ image_size }x{ image_size }'
 
         response = requests.get(url)
@@ -83,14 +84,14 @@ def print_compound_properties(compounds : list):
         print(json.dumps(compound, indent = 4))
 
 
-def plot_compound_images(title : str, directory : str, compounds : list):
+def plot_compound_images(compounds : list, directory : str, title : str):
     """
     Plots the images of the chemical compounds downloaded from PubChem.
 
     Parameters:
-        - title     (str)  : Title of the image.
-        - directory (str)  : Directory where the images are saved.
         - compounds (list) : List of the compound dictionaries with the keys 'CID' and 'Title'.
+        - directory (str)  : Directory where the images are saved.
+        - title     (str)  : Title of the image.
 
     Returns:
         - None
