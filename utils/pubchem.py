@@ -121,7 +121,13 @@ def plot_compound_images(compounds : list, directory : str, title : str):
         Title = compound['Title']
 
         image_file = f'{ CID }_PubChem.png'
-        image_file = os.path.join(directory, image_file)
+
+        for root, dirs, files in os.walk(directory):
+
+            if image_file in files:
+
+                image_file = os.path.join(root, image_file)
+                break
 
         ax = axs[index]
         ax.set_title(Title)
