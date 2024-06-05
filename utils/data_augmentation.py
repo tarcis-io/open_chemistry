@@ -45,11 +45,13 @@ def plot_images_with_transpositions(image_file : str, title : str):
         - None
 
     Dependencies:
+        - os
         - math
         - matplotlib
         - pillow
     """
 
+    import os
     import math
     import matplotlib.pyplot
     from PIL import Image
@@ -74,10 +76,10 @@ def plot_images_with_transpositions(image_file : str, title : str):
 
         files.append('{}_with_transposition_{}.png'.format(image_file, transposition))
 
-    fig_cols = 4
+    fig_cols = 5
     fig_rows = math.ceil(len(files) / fig_cols)
 
-    fig, axs = matplotlib.pyplot.subplots(fig_rows, fig_cols, figsize = (16, 8), constrained_layout = True)
+    fig, axs = matplotlib.pyplot.subplots(fig_rows, fig_cols, figsize = (16, 16), constrained_layout = True)
     fig.suptitle(title, fontsize = 16)
 
     axs = axs.flatten()
@@ -86,4 +88,5 @@ def plot_images_with_transpositions(image_file : str, title : str):
     for index, file in enumerate(files):
 
         ax = axs[index]
+        ax.set_title(os.path.basename(file))
         ax.imshow(matplotlib.pyplot.imread(file))
